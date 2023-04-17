@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="leaderbord.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="forside.css">
+    <title>Leaderboard</title>
+</head>
+<body>
+  <header>
+
+
+    
+  </header>
+ 
+  <h1>Leaderboard</h1>
+    
+    
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Forside</a>
+    <a href="logaritmer.html">1. Potenser og Logaritmer</a>
+    <a href="kontinuitet.html">2. Grenseverdier og Kontinuitet</a>
+    <a href="derivasjon.html">3. Derivasjon</a>
+    <a href="oppgavesamling.html">Oppgavesamling</a>
+    <a href="DragAndDrop.html">Drag and Drop</a>
+    <a href="leaderboard.html">Leaderboard</a>
+  </div>
+
+
+  <div class="menu">
+      <img class="menupic" alt="menuSlider" tabindex="1"title="Sidenav" onkeypress="openNav()" onclick="openNav()" src="bilder/icons8-menu-rounded-96.png">
+      </div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Navn</th>
+            <th>Poeng</th>
+        </tr>
+    </thead>
+    <tbody id="tabell">
+
+    </tbody>
+</table>
+
+<script>
+
+var firebaseConfig = {
+  apiKey: "AIzaSyBglc7caYsvYKsubhEqxmUI1D-cXHOP1Ow",
+  authDomain: "matteleaderboard-ce1ed.firebaseapp.com",
+  projectId: "matteleaderboard-ce1ed",
+  storageBucket: "matteleaderboard-ce1ed.appspot.com",
+  messagingSenderId: "1023484373225",
+  appId: "1:1023484373225:web:3a801e7fb14dfe2277a878"
+};
+
+
+
+
+ // Initialize Firebase
+ firebase.initializeApp(firebaseConfig);
+
+ // Lager en referanse til databasen
+let db = firebase.firestore();
+let tabell = document.getElementById("tabell")
+
+function oppdater(){
+db.collection("scores").get().then((snapshot)=>{
+
+  let dokumenter = snapshot.docs;
+  
+  let tekst = "";
+
+  Highscore = []
+
+for (let i = 0; i < dokumenter.length; i++) {
+    Highscore.push([dokumenter[i].data().name, dokumenter[i].data().score])  
+}
+   
+
+Highscore.sort(function(a, b){
+    if(a < b) { return -1; }
+    if(a > b) { return 1; }
+    return 0;
+})
+
+Highscore.sort(function(a, b ){return b[1]-a[1]})
+  
+  for (let i = 0; i < dokumenter.length; i++) {
+    tekst += "<tr><td>" + Highscore[i][0] + "</td><td>" + Highscore[i][1] + "</td></tr>";
+    
+  }
+  tabell.innerHTML = tekst;
+
+
+
+
+});
+}
+oppdater()
+
+
+</script>
+
+
+
+
+
+<script src="sidebar.js"></script>
+</body>
+
+</html>

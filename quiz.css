@@ -1,0 +1,110 @@
+*,*:after,*:before{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing:border-box;
+    box-sizing: border-box;
+}
+
+
+body{           
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 55vw;
+    background-color:rgb(37, 40, 100);
+}
+
+
+.QuizContainer{
+    width: 34.7vw;
+    min-height: 6.9vw;
+    background-color:#fff;
+    box-shadow: 0 0 0.347vw 0.208vw rgba(0,0,0,0.3);
+    border-radius: 1.041vw;
+   
+}
+
+
+.QuizHeader{
+    background-color:rgb(37, 40, 100);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.39vw;
+    margin: -1.39vw, -1.39vw, 1.39vw;
+    border-radius: 1.041vw 1.041vw 0 0;
+    font-size: 1.39vw;
+
+}
+
+
+
+.Submit{
+    position:relative;
+    padding: 0.56vw 1.39vw;
+    background-color: rgb(37, 40, 100);
+    color: #fff;
+    border-radius: 1.041vw;
+    margin: 1.041vw;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    font-size: x-large;
+}
+
+.Submit:hover{
+    background-color: rgb(62, 57, 136);
+}
+
+header{
+    position: absolute;
+    width:100vw;
+    height:6vw;
+    background-color:rgb(37, 40, 44);
+    z-index: -2;
+    top:0vw;
+    left:0vw;
+    align-items: center;
+    text-align: center;
+}
+h1{
+    position: absolute;
+    color:#dc8c46;
+    font-size: 4.39vw;
+    top:-2.5vw;
+    margin:10;
+}
+
+#Spm{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    font-size: xx-large;
+}
+
+#Alt{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    font-size: xx-large;
+}
+
+#sendPoeng{
+    position:relative;
+    padding: 0.56vw 1.39vw;
+    background-color: rgb(37, 40, 100);
+    color: #fff;
+    border-radius: 1.041vw;
+    margin: 1.041vw;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    font-size: x-large;
+}
+
+#inputNavn{
+    position:relative;
+    padding: 0.56vw 1.39vw;
+    background-color: white;
+    color: black;
+    border-radius: 1.041vw;
+    margin: 1.041vw;
+    font-size: x-large;
+}

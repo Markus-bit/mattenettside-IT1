@@ -1,0 +1,33 @@
+#idInnhold{
+  position: absolute;
+  top:10vw;
+  left:26vw;
+  width: 50vw;
+
+}
+
+
+
+.kolonner {
+display: inline-block;
+margin-right: 50px;
+width: 250px;
+}
+.kolonner li {
+    border: solid black 1px;
+    margin-bottom: 5px;
+    background-color: white;
+    padding: 40px;
+    list-style-type: none;
+    height: 40px;
+    width: 300px;
+}
+
+#idRes{
+  position: relative;
+  color:white;
+  font-weight: bolder;
+  font-size: x-large;
+  left:225px;
+
+}
